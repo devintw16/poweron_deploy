@@ -53,3 +53,47 @@ Mar 26 09:25:21 home systemd-timesyncd[820]: Initial synchronization to time ser
 Mar 28 05:06:02 home systemd-timesyncd[820]: Timed out waiting for reply from 185.125.190.58:123 (ntp.ubuntu.com).
 Mar 28 05:06:02 home systemd-timesyncd[820]: Initial synchronization to time server 91.189.91.157:123 (ntp.ubuntu.com).
 Apr 03 10:25:54 home systemd-timesyncd[820]: Initial synchronization to time server 91.189.91.157:123 (ntp.ubuntu.com).
+
+
+devin@home:~/code$ pstree -p 2004271
+mysqld(2004271)─┬─{mysqld}(2004280)
+                ├─{mysqld}(2004281)
+                ├─{mysqld}(2004282)
+                ├─{mysqld}(2004283)
+                ├─{mysqld}(2004284)
+                ├─{mysqld}(2004285)
+                ├─{mysqld}(2004286)
+                ├─{mysqld}(2004287)
+                ├─{mysqld}(2004288)
+                ├─{mysqld}(2004289)
+                ├─{mysqld}(2004290)
+                ├─{mysqld}(2004291)
+                ├─{mysqld}(2004292)
+                ├─{mysqld}(2004293)
+                ├─{mysqld}(2004294)
+                ├─{mysqld}(2004295)
+                ├─{mysqld}(2004300)
+                ├─{mysqld}(2004301)
+                ├─{mysqld}(2004302)
+                ├─{mysqld}(2004303)
+                ├─{mysqld}(2004304)
+                ├─{mysqld}(2004305)
+                ├─{mysqld}(2004306)
+                ├─{mysqld}(2004307)
+                ├─{mysqld}(2004308)
+                ├─{mysqld}(2004309)
+                ├─{mysqld}(2004313)
+                ├─{mysqld}(2004314)
+                ├─{mysqld}(2004315)
+                ├─{mysqld}(2004316)
+                ├─{mysqld}(2004317)
+                ├─{mysqld}(2004318)
+                ├─{mysqld}(2004319)
+                ├─{mysqld}(2004320)
+                ├─{mysqld}(2004321)
+                └─{mysqld}(2004323)
+devin@home:~/code$ sudo netstat -tunlp | grep mysql
+tcp        0      0 127.0.0.1:33060         0.0.0.0:*               LISTEN      2004271/mysqld      
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      2004271/mysqld
+
+
