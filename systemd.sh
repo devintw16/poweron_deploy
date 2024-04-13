@@ -97,3 +97,46 @@ tcp        0      0 127.0.0.1:33060         0.0.0.0:*               LISTEN      
 tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      2004271/mysqld
 
 
+#Repositories are version controlled source code store
+#Public service available is www.github.com
+
+# initialize new local repository
+git init 
+
+# add new file to track
+git add <filename>
+
+# commit changes
+git commit -m "<commit message>" 
+
+#Ubuntu package list installed 
+apt list --installed | grep mysql
+
+
+
+#Mysql admin
+
+# login using unix socket at 
+/var/run/mysqld/mysqld.sock
+
+# Login using socket, switch to root 
+mysql
+
+# Once inside DB 
+show databases;
+
+use <database_name>;
+
+show tables;
+
+select * from <table_name>;
+
+mysql> LOAD DATA LOCAL INFILE '/path/pet.txt' INTO TABLE pet;
+
+mysql> SELCT * FROM departments INTO OUTFILE '/tmp/departments';
+
+mysql>  select * from departments where dept_no like 'd009';
+
+
+
+
